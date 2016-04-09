@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:background="@drawable/login_bg"
+        />
+
+    <ImageView
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/center"
+        android:contentDescription="@null"
+        android:src="@drawable/me_head_bg"
+        android:id="@+id/imageView" />
+
+    <com.example.stone.test.image.CircularImage
+        android:id="@+id/cover_user_photo"
+        android:layout_width="450px"
+        android:layout_height="450px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30px"
+        android:layout_alignBottom="@id/center"
+        />
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="170px"
+        android:layout_marginRight="170px"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:textSize="70px"
+        android:focusable="false"
+        android:textColor="#ffffff"
+        android:text="随机生成的用户名"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="170px"
+        android:layout_marginRight="170px"
+        android:textAlignment="center"
+        android:text="进入世界"
+        android:textSize="100px"
+        android:padding="60px"
+        android:background="@drawable/button_radius"
+        android:textColor="#00ade0"
+        android:layout_below="@id/nickname"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_goin"
+        />
+
+</RelativeLayout>
