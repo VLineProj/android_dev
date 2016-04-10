@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,7 +22,28 @@
         <activity
             android:name=".CaptureActivity"
             android:label="capture">
+        </activity>
 
+        <activity
+            android:name=".avatorActivity"
+            android:label="avator">
+        </activity>
+
+
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.4" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".MessageList.MsgListActivity"
+            android:label="msg">
+        </activity>
+
+        <activity
+            android:name=".MessageList.AddContent"
+            android:label="addmsg">
         </activity>
     </application>
 

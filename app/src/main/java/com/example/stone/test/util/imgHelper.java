@@ -1,7 +1,9 @@
 package com.example.stone.test.util;
 
+import android.os.Handler;
 import android.util.JsonReader;
 
+import com.example.stone.test.model.User;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -20,12 +22,12 @@ import java.util.Map;
 public class imgHelper {
 
 
-    public static ArrayList<String> getAllAvator(){
-        String urlString="http://vline.zhengzi.me/control.php?func=getAllBuildInAvatars";
-        String result=netHelper.getURLResponse(urlString);
-
-        return paraseAvatorJson(result);
-    }
+//    public static ArrayList<String> getAllAvator(){
+//        String urlString="http://vline.zhengzi.me/control.php?func=getAllBuildInAvatars";
+//        String result=netHelper.getURLResponse(urlString);
+//
+//        return paraseAvatorJson(result);
+//    }
 
 
     private static ArrayList<String> paraseAvatorJson(String json){
@@ -41,5 +43,20 @@ public class imgHelper {
         }
 
         return avators;
+    }
+
+    public static void changeAvatar(User user,int id,Handler handler){
+        try {
+            JSONObject json = new JSONObject();
+            json.put("userName", user.getUserName());
+            json.put("userPasswdHash", user.getPasswordMD5());
+            json.put("avatarId", id);
+
+            String url = "http://vline.zhengzi.me/control.php?func=changeUserAvatar&para="+json.toString();
+            new Thread(new AccessNetwork("GET",url,handler)).start();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

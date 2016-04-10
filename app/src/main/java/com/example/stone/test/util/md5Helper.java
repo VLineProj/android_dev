@@ -1,5 +1,12 @@
 package com.example.stone.test.util;
 
+import android.os.Handler;
+
+import com.example.stone.test.model.User;
+
+import org.json.JSONObject;
+
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -21,5 +28,20 @@ public class md5Helper {
             sb.append(b[i]);
         }
         return sb.toString();
+    }
+
+    public static void getCodeID(User user, String code,Handler handler){
+        try {
+            String url = "http://vline.zhengzi.me/control.php?func=scanCode&para=";
+            JSONObject json = new JSONObject();
+            json.put("userName",user.getUserName());
+            json.put("userPasswdHash",user.getPasswordMD5());
+            json.put("codeContent", code);
+            String param= URLEncoder.encode(json.toString(),"UTF-8");
+
+            new Thread(new AccessNetwork("GET", url+param,handler)).start();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

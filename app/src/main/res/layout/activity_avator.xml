@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-
-    <GridView
-        android:id="@+id/avator_grid"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3">
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg"
+        android:scaleType="centerInside" />
 
-    </GridView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+
+        <include
+            android:id="@+id/include1"
+            layout="@layout/activity_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <GridView
+            android:id="@+id/avator_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:horizontalSpacing="20dp"
+            android:numColumns="3"
+            android:verticalSpacing="20dp">
+
+        </GridView>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textAlignment="center"
+            android:text="绑定帐号"
+            android:textSize="40dp"
+            android:padding="10dp"
+            android:background="@drawable/button_radius"
+            android:textColor="#00ade0"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btn_bind_user"
+            />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textAlignment="center"
+            android:text="使用已有帐号"
+            android:textSize="40dp"
+            android:padding="10dp"
+            android:background="@drawable/button_radius"
+            android:textColor="#00ade0"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/btn_dele_user"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

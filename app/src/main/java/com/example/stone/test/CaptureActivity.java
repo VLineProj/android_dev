@@ -16,6 +16,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.stone.test.camera.CameraManager;
@@ -42,7 +43,7 @@ public class CaptureActivity extends Activity implements Callback {
 	private static final float BEEP_VOLUME = 0.10f;
 	private boolean vibrate;
 	
-	private Button button_backButton;
+	private ImageButton button_backButton;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -57,7 +58,7 @@ public class CaptureActivity extends Activity implements Callback {
 		hasSurface = false;
 		inactivityTimer = new InactivityTimer(this);
 		
-		button_backButton = (Button) this.findViewById(R.id.button_back);
+		button_backButton = (ImageButton) this.findViewById(R.id.button_back);
 		button_backButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
